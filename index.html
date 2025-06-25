@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de Dados y Escaleras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Simulador de Dados y Escaleras</h1>
+    
+    <div class="explanation">
+        <p>Este simulador lanza cinco dados y verifica si se ha formado una escalera. Una <strong>escalera</strong> es una secuencia de cinco números consecutivos (1-2-3-4-5 o 2-3-4-5-6).</p>
+    </div>
+    
+    <div class="dice-container">
+        <div id="die1" class="dice">
+            <div class="dice-dots">
+                <div class="dot hidden" id="die1-dot1"></div>
+                <div class="dot hidden" id="die1-dot2"></div>
+                <div class="dot hidden" id="die1-dot3"></div>
+                <div class="dot hidden" id="die1-dot4"></div>
+                <div class="dot hidden" id="die1-dot5"></div>
+                <div class="dot hidden" id="die1-dot6"></div>
+                <div class="dot hidden" id="die1-dot7"></div>
+                <div class="dot hidden" id="die1-dot8"></div>
+                <div class="dot hidden" id="die1-dot9"></div>
+            </div>
+        </div>
+        
+        <div id="die2" class="dice">
+            <div class="dice-dots">
+                <div class="dot hidden" id="die2-dot1"></div>
+                <div class="dot hidden" id="die2-dot2"></div>
+                <div class="dot hidden" id="die2-dot3"></div>
+                <div class="dot hidden" id="die2-dot4"></div>
+                <div class="dot hidden" id="die2-dot5"></div>
+                <div class="dot hidden" id="die2-dot6"></div>
+                <div class="dot hidden" id="die2-dot7"></div>
+                <div class="dot hidden" id="die2-dot8"></div>
+                <div class="dot hidden" id="die2-dot9"></div>
+            </div>
+        </div>
+        
+        <div id="die3" class="dice">
+            <div class="dice-dots">
+                <div class="dot hidden" id="die3-dot1"></div>
+                <div class="dot hidden" id="die3-dot2"></div>
+                <div class="dot hidden" id="die3-dot3"></div>
+                <div class="dot hidden" id="die3-dot4"></div>
+                <div class="dot hidden" id="die3-dot5"></div>
+                <div class="dot hidden" id="die3-dot6"></div>
+                <div class="dot hidden" id="die3-dot7"></div>
+                <div class="dot hidden" id="die3-dot8"></div>
+                <div class="dot hidden" id="die3-dot9"></div>
+            </div>
+        </div>
+        
+        <div id="die4" class="dice">
+            <div class="dice-dots">
+                <div class="dot hidden" id="die4-dot1"></div>
+                <div class="dot hidden" id="die4-dot2"></div>
+                <div class="dot hidden" id="die4-dot3"></div>
+                <div class="dot hidden" id="die4-dot4"></div>
+                <div class="dot hidden" id="die4-dot5"></div>
+                <div class="dot hidden" id="die4-dot6"></div>
+                <div class="dot hidden" id="die4-dot7"></div>
+                <div class="dot hidden" id="die4-dot8"></div>
+                <div class="dot hidden" id="die4-dot9"></div>
+            </div>
+        </div>
+        
+        <div id="die5" class="dice">
+            <div class="dice-dots">
+                <div class="dot hidden" id="die5-dot1"></div>
+                <div class="dot hidden" id="die5-dot2"></div>
+                <div class="dot hidden" id="die5-dot3"></div>
+                <div class="dot hidden" id="die5-dot4"></div>
+                <div class="dot hidden" id="die5-dot5"></div>
+                <div class="dot hidden" id="die5-dot6"></div>
+                <div class="dot hidden" id="die5-dot7"></div>
+                <div class="dot hidden" id="die5-dot8"></div>
+                <div class="dot hidden" id="die5-dot9"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="button-container">
+        <button onclick="lanzarDados()" class="success">Lanzar Dados</button>
+        <button onclick="ejecutarSimulacion(10)" class="info">Simular 10 lanzamientos</button>
+        <button onclick="ejecutarSimulacion(100)" class="info">Simular 100 lanzamientos</button>
+        <button onclick="ejecutarSimulacion(1000)" class="warning">Simular 1000 lanzamientos</button>
+        <button onclick="reiniciarSimulacion()" class="danger">Reiniciar Simulación</button>
+    </div>
+    
+    <div class="stats">
+        <h2 id="rollCount">Simulaciones realizadas: 0</h2>
+        <h2 id="straightCount">Escaleras formadas: 0</h2>
+        <h2 id="lastRoll">Última tirada: </h2>
+        <h2 id="isStraight"></h2>
+        
+        <div class="probability-container">
+            <h2 id="probability">Probabilidad de escalera: 0%</h2>
+            <div class="progress-bar">
+                <div id="probabilityBar" class="progress" style="width: 0%">0%</div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="chart">
+        <canvas id="probabilityChart"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
